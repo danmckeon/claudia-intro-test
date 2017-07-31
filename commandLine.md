@@ -1,17 +1,19 @@
 # Command Line Arguments for Lambda Deployment with Claudia
 
-1. Install claudia as global npm utility
+* Install claudia as global npm utility
 
 `npm install claudia -g`
 
-2. Initial deploy to lambda
+* Initial deploy to lambda
 
 `claudia create --region us-east-1 --handler lambda.handler --profile personal-account`
 
-*Last arg specifies aws keys to use in .aws/credentials*
+*Last arg specifies aws keys to use in .aws/credentials - could instead use AWS_PROFILE=personal-account claudia... or define this ENV variable elsewhere*
 
-3. Invoke lambda function from console
+* Invoke lambda function from console
 
 `claudia test-lambda --profile personal-account`
 
-4. 
+* Invoice lambda function with test event
+
+`claudia test-lambda --event event.json --profile personal-account`
